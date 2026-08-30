@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-panel-bg text-panel-text bg-grain-noise;
+    background-size: 18px 18px;
+  }
+
+  ::selection {
+    background: #c9a227;
+    color: #17140f;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #e0c158;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #17140f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3a3222;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6e6552;
+  }
+}
+
+@layer components {
+  /* Riveted panel edge used on cards, echoes bolted equipment casing */
+  .rivet-corner {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 9999px;
+    background: rgba(241, 233, 216, 0.14);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
